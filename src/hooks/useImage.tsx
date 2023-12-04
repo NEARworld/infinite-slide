@@ -1,4 +1,5 @@
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { CircularLinkedList } from "../ds/CircularLinkedList";
 
 const images = [
   {
@@ -19,8 +20,14 @@ const VISIBLE_AREA_WIDTH = 1200;
 
 export const useImage = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const linkedList = useMemo(() => new CircularLinkedList(), []);
+
   const updatedImages: { id: number; src: string }[] = useMemo(() => {
     return images.concat({ id: images.length + 1, src: images[0].src });
+  }, []);
+
+  useEffect(() => {
+    updatedImages.map((image) => linkedList.append(image.src));
   }, []);
 
   const getImageElements = () => {
