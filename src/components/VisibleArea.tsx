@@ -1,11 +1,20 @@
 import { FC, PropsWithChildren } from "react";
 
-export const VisibleArea: FC<PropsWithChildren> = ({ children }) => {
+type Props = {
+  width: number;
+  height: number;
+};
+
+export const VisibleArea: FC<PropsWithChildren<Props>> = ({
+  width,
+  height,
+  children,
+}) => {
   return (
     <div
       style={{
-        width: "1200px",
-        height: "400px",
+        width,
+        height,
         overflow: "hidden",
         backgroundColor: "pink",
       }}
