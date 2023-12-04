@@ -1,7 +1,9 @@
-import { VisibleArea } from "./components/VisibleArea";
-import { Slider } from "./components/Slider";
 import { useRef } from "react";
+
 import { useImage } from "./hooks/useImage";
+
+import { Slider } from "./components/Slider";
+import { VisibleArea } from "./components/VisibleArea";
 
 function App() {
   const sliderRef = useRef<HTMLDivElement>(null);
