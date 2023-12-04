@@ -31,4 +31,13 @@ export class CircularLinkedList implements ICircularLinkedList {
     this.tail = newNode;
     this.tail.next = this.head;
   }
+
+  *traverse() {
+    let currentNode = this.head;
+
+    while(currentNode) {
+      yield currentNode.data;
+      currentNode = currentNode.next;
+    }
+  }
 }
