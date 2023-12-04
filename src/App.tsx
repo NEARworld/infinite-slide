@@ -1,4 +1,3 @@
-import "./App.css";
 import { VisibleArea } from "./components/VisibleArea";
 
 function App() {
