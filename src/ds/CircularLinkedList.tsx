@@ -1,4 +1,4 @@
-import { LinkedListNode, LinkedListNodeData } from "./LinkedListNode";
+import { LinkedListNode } from "./LinkedListNode";
 
 interface ICircularLinkedList {
   head: null | LinkedListNode;
@@ -14,7 +14,7 @@ export class CircularLinkedList implements ICircularLinkedList {
     this.tail = null;
   }
 
-  append(data: LinkedListNodeData) {
+  append(data: string) {
     const newNode = new LinkedListNode(data);
 
     if (this.head === null) {
@@ -35,7 +35,7 @@ export class CircularLinkedList implements ICircularLinkedList {
   *traverse() {
     let currentNode = this.head;
 
-    while(currentNode) {
+    while (currentNode) {
       yield currentNode.data;
       currentNode = currentNode.next;
     }

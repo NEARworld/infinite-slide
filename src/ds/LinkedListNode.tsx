@@ -1,17 +1,13 @@
-export type LinkedListNodeData = {
-  src: string;
-};
-
 interface ILinkedListNode {
-  data: LinkedListNodeData;
+  data: string;
   next: null | LinkedListNode;
 }
 
 export class LinkedListNode implements ILinkedListNode {
-  data: LinkedListNodeData;
+  data: string;
   next: null | LinkedListNode;
 
-  constructor(data: LinkedListNodeData) {
+  constructor(data: string) {
     this.data = data;
     this.next = null;
   }
