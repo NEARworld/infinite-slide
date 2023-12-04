@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 
 const images = [
   {
@@ -18,6 +18,7 @@ const images = [
 const VISIBLE_AREA_WIDTH = 1200;
 
 export const useImage = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
   const updatedImages: { id: number; src: string }[] = useMemo(() => {
     return images.concat({ id: images.length + 1, src: images[0].src });
   }, []);
@@ -38,6 +39,7 @@ export const useImage = () => {
   };
 
   return {
+    sliderRef,
     VISIBLE_AREA_WIDTH,
     slideWidth: updatedImages.length * VISIBLE_AREA_WIDTH,
     getImageElements,
