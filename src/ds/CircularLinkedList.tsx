@@ -25,7 +25,8 @@ export class CircularLinkedList implements ICircularLinkedList {
 
     let currentNode = this.head;
 
-    while (currentNode.next) currentNode = currentNode.next;
+    while (this.tail !== currentNode && currentNode.next)
+      currentNode = currentNode.next;
 
     currentNode.next = newNode;
     this.tail = newNode;
