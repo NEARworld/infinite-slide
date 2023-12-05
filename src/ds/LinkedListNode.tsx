@@ -1,13 +1,19 @@
 interface ILinkedListNode {
-  data: string;
+  data: {
+    src: string;
+    nth: number;
+  };
   next: null | LinkedListNode;
 }
 
 export class LinkedListNode implements ILinkedListNode {
-  data: string;
+  data: {
+    src: string;
+    nth: number;
+  };
   next: null | LinkedListNode;
 
-  constructor(data: string) {
+  constructor(data: ILinkedListNode["data"]) {
     this.data = data;
     this.next = null;
   }
