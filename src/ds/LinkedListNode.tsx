@@ -1,4 +1,4 @@
-interface ILinkedListNode {
+export interface ILinkedListNode {
   data: {
     src: string;
     nth: number;
